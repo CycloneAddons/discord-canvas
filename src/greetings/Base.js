@@ -129,8 +129,8 @@ module.exports = class Greeting {
 
         // Draw # for discriminator
         ctx.fillStyle = this.colorHashtag;
-        ctx.font = "75px SketchMatch";
-        ctx.fillText("@", canvas.width - 690, canvas.height - 165);
+        ctx.font = "72px SketchMatch";
+        ctx.fillText("@", canvas.width - 685, canvas.height - 160);
 
         // Draw title
         ctx.font = "90px Bold";
