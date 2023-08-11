@@ -101,7 +101,7 @@ module.exports = class Greeting {
         ctx.fillRect(344, canvas.height - 296, 625, 65);
         ctx.fillStyle = this.colorDiscriminatorBox;
         ctx.globalAlpha = this.opacityDiscriminatorBox;
-        ctx.fillRect(389, canvas.height - 225, 600, 65);
+        ctx.fillRect(389, canvas.height - 225, 550, 65);
         ctx.fillStyle = this.colorMessageBox;
         ctx.globalAlpha = this.opacityMessageBox;
         ctx.fillRect(308, canvas.height - 110, 672, 65);
@@ -130,7 +130,7 @@ module.exports = class Greeting {
         // Draw # for discriminator
         ctx.fillStyle = this.colorHashtag;
         ctx.font = "65px SketchMatch";
-        ctx.fillText("@", canvas.width - 195, canvas.height - 165);
+        ctx.fillText("@", canvas.width - 695, canvas.height - 165);
 
         // Draw title
         ctx.font = "90px Bold";
