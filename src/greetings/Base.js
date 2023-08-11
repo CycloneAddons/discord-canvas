@@ -119,7 +119,7 @@ module.exports = class Greeting {
 
         // Draw discriminator
         ctx.fillStyle = this.colorDiscriminator;
-        ctx.font = "40px Bold";
+        ctx.font = "40px KeepCalm";
         ctx.fillText(this.discriminator, canvas.width - 623, canvas.height - 178);
 
         // Draw membercount
