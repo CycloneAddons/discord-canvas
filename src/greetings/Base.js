@@ -4,7 +4,8 @@ const { formatVariable, applyText } = require("../../utils/functions");
 module.exports = class Greeting {
 
     constructor() {
-        this.username = "Clyde";
+        this.displayName = "Cyclone Addons";
+        this.username = "cycloneaddons";
         this.guildName = "ServerName";
         this.colorTitleBorder = "#000000";
         this.colorMemberCount = "#ffffff";
@@ -14,10 +15,11 @@ module.exports = class Greeting {
         this.avatar = `${__dirname}/../../assets/img/default-avatar.png`;
         this.opacityBorder = "0.4";
         this.colorBorder = "#000000";
+        this.colorDisplayName = "#ffffff";
         this.colorUsername = "#ffffff";
         this.colorUsernameBox = "#000000";
         this.opacityUsernameBox = "0.4";
-        this.discriminator = "XXXX";
+        this.discriminator = "";
         this.colorDiscriminator = "#ffffff";
         this.colorAvatar = "#000000";
         this.opacityDiscriminatorBox = "0.4";
@@ -32,13 +34,18 @@ module.exports = class Greeting {
         return this;
     }
     
-    setDiscriminator(value) {
-        this.discriminator = value;
+    setUsername(value) {
+        this.username = value;
         return this;
     }
     
-    setUsername(value) {
-        this.username = value;
+    setDisplayName(value) {
+        this.displayName = value;
+        return this;
+    }
+
+    setDiscriminator(value) {
+        this.discriminator = value;
         return this;
     }
     
@@ -106,28 +113,28 @@ module.exports = class Greeting {
         ctx.globalAlpha = this.opacityMessageBox;
         ctx.fillRect(308, canvas.height - 110, 672, 65);
 
-        // Draw username
+        // Draw displayName
         ctx.globalAlpha = 1;
-        ctx.fillStyle = this.colorUsername;
-        ctx.font = applyText(canvas, this.username, 48, 600, "Bold");
-        ctx.fillText(this.username, canvas.width - 660, canvas.height - 248);
+        ctx.fillStyle = this.colorDisplayName;
+        ctx.font = applyText(canvas, this.displayName, 48, 600, "Bold");
+        ctx.fillText(this.displayName, canvas.width - 660, canvas.height - 248);
 
         // Draw guild name
         ctx.fillStyle = this.colorMessage;
         ctx.font = applyText(canvas, guildName, 53, 600, "Bold");
         ctx.fillText(guildName, canvas.width - 690, canvas.height - 62);
 
-        // Draw discriminator
-        ctx.fillStyle = this.colorDiscriminator;
+        // Draw username
+        ctx.fillStyle = this.colorUsername;
         ctx.font = "40px KeepCalm";
-        ctx.fillText(this.discriminator, canvas.width - 623, canvas.height - 178);
+        ctx.fillText(this.username, canvas.width - 623, canvas.height - 178);
 
         // Draw membercount
         ctx.fillStyle = this.colorMemberCount;
         ctx.font = "22px Bold";
         ctx.fillText(memberCount, 40, canvas.height - 35);
 
-        // Draw # for discriminator
+        // Draw @ for username
         ctx.fillStyle = this.colorHashtag;
         ctx.font = "65px SketchMatch";
         ctx.fillText("@", canvas.width - 695, canvas.height - 165);
